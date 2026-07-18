@@ -1,47 +1,164 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
 
-    <h1>🎓 Student Grade Calculator</h1>
+<head>
 
-    <p>Calculate your average score and final letter grade.</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Student Grade Calculator</title>
 
-    <div class="grade-inputs">
+    <!-- Connect CSS file -->
+    <link rel="stylesheet" href="style.css">
 
-        <input 
-            type="text" 
-            id="studentName" 
-            placeholder="Enter student name"
-        >
-
-
-        <input 
-            type="number" 
-            id="grade1" 
-            placeholder="Assignment 1 (0-100)"
-        >
+</head>
 
 
-        <input 
-            type="number" 
-            id="grade2" 
-            placeholder="Assignment 2 (0-100)"
-        >
+<body>
 
 
-        <input 
-            type="number" 
-            id="grade3" 
-            placeholder="Assignment 3 (0-100)"
-        >
+    <div class="container">
+
+
+        <!-- Header Section -->
+        <header>
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h1>Student Grade Calculator</h1>
+
+            <p>
+                Calculate your average score and final letter grade.
+            </p>
+
+        </header>
+
+
+
+        <!-- Student Information Section -->
+        <section class="card">
+
+
+            <h2>
+                👤 Student Information
+            </h2>
+
+
+            <input 
+                type="text" 
+                id="studentName" 
+                placeholder="Enter student name"
+            >
+
+
+        </section>
+
+
+
+
+        <!-- Assignment Section -->
+        <section class="card">
+
+
+            <h2>
+                📚 Assignments
+            </h2>
+
+
+
+            <div class="assignment-container">
+
+
+                <input 
+                    type="number" 
+                    id="grade1" 
+                    placeholder="Assignment 1 (0-100)"
+                >
+
+
+
+                <input 
+                    type="number" 
+                    id="grade2" 
+                    placeholder="Assignment 2 (0-100)"
+                >
+
+
+
+                <input 
+                    type="number" 
+                    id="grade3" 
+                    placeholder="Assignment 3 (0-100)"
+                >
+
+
+            </div>
+
+
+
+            <button onclick="calculateGrade()">
+
+                🧮 Calculate Grade
+
+            </button>
+
+
+        </section>
+
+
+
+
+
+
+        <!-- Results Section -->
+        <section class="card results">
+
+
+            <h2>
+                📊 Results
+            </h2>
+
+
+            <div id="result">
+
+                Your results will appear here.
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <!-- Grading Information -->
+
+        <section class="grading-scale">
+
+            💡 
+            Grading Scale:
+            
+            <strong>
+                90-100 (A) • 80-89 (B) • 70-79 (C) • 60-69 (D) • 0-59 (F)
+            </strong>
+
+        </section>
+
+
 
     </div>
 
 
-    <button onclick="calculateGrade()">
-        Calculate Grade
-    </button>
+
+    <!-- Connect JavaScript file -->
+
+    <script src="script.js"></script>
 
 
-    <h2 id="result"></h2>
+</body>
 
-</div>
+</html>
