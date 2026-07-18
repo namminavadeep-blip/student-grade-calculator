@@ -1,31 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Grade Calculator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<div class="container">
 
-<body>
+    <h1>🎓 Student Grade Calculator</h1>
 
-    <div class="container">
-        <h1>🎓Student Grade Calculator</h1>
+    <p>Calculate your average score and final letter grade.</p>
 
-        <p>Calculate your average score and final letter grade.</p>
 
-        <div class="grade-inputs">
-            <input type="number" id="grade1" placeholder="Assignment 1">
-            <input type="number" id="grade2" placeholder="Assignment 2">
-            <input type="number" id="grade3" placeholder="Assignment 3">
-        </div>
+    <div class="grade-inputs">
 
-        <button onclick="calculateGrade()">Calculate Grade</button>
+        <input 
+            type="text" 
+            id="studentName" 
+            placeholder="Enter student name"
+        >
 
-        <h2 id="result"></h2>
+
+        <input 
+            type="number" 
+            id="grade1" 
+            placeholder="Assignment 1 (0-100)"
+        >
+
+
+        <input 
+            type="number" 
+            id="grade2" 
+            placeholder="Assignment 2 (0-100)"
+        >
+
+
+        <input 
+            type="number" 
+            id="grade3" 
+            placeholder="Assignment 3 (0-100)"
+        >
+
     </div>
 
-    <script src="script.js"></script>
 
-</body>
-</html>
+    <button onclick="calculateGrade()">
+        Calculate Grade
+    </button>
+
+
+    <h2 id="result"></h2>
+
+</div>
