@@ -1,0 +1,30 @@
+{
+  "name": "student-grade-calculator",
+  "version": "1.0.0",
+  "description": "Student Grade Calculator demonstrating Unit Testing with Jest in Node.js.",
+  "main": "gradeCalculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randeep03/student-grade-calculator.git"
+  },
+  "keywords": [
+    "javascript",
+    "jest",
+    "unit-testing",
+    "nodejs",
+    "grade-calculator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/randeep03/student-grade-calculator/issues"
+  },
+  "homepage": "https://github.com/randeep03/student-grade-calculator#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
