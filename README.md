@@ -1,16 +1,18 @@
-# 🎓 Student Grade Calculator
+# 🎓 Student Grade Calculator - Unit Testing with Jest
 
-A modern and responsive **Student Grade Calculator Web Application** built using **HTML5, CSS3, and JavaScript**.
+A student grade calculator web application built using **HTML5, CSS3, JavaScript, and Node.js Unit Testing with Jest**.
 
-The application allows users to enter student information and assignment scores, calculate the average score, and automatically determine the final letter grade.
+This project demonstrates how application logic can be separated into reusable JavaScript functions and tested independently using the Jest testing framework.
 
-This project was developed for the **COMP 2068 Group Tutorial Presentation** to demonstrate the practical use of front-end web technologies, user input handling, JavaScript logic, and GitHub-based project development.
+The calculator allows users to enter student grades, calculate the average score, determine the final letter grade, and verify whether a student has passed or failed.
+
+This project was created for the **COMP 2068 Group Tutorial Presentation** to demonstrate the concepts of **Unit Testing in Node.js using Jest**.
 
 ---
 
 # 🌐 Live Demo
 
-The application is deployed and available online through Netlify:
+The application is deployed using Netlify:
 
 🔗 Live Website:
 
@@ -18,11 +20,11 @@ https://phenomenal-kataifi-2fe78c.netlify.app/
 
 ---
 
-# 📂 Source Code
+# 📂 GitHub Repository
 
-The complete source code is available on GitHub:
+The complete source code is available here:
 
-🔗 GitHub Repository:
+🔗 GitHub:
 
 https://github.com/randeep03/student-grade-calculator.git
 
@@ -30,50 +32,69 @@ https://github.com/randeep03/student-grade-calculator.git
 
 # ✨ Features
 
-✅ Student name input  
-✅ Assignment grade entry  
-✅ Automatic average score calculation  
-✅ Letter grade generation  
-✅ Input validation  
-✅ Responsive user interface  
-✅ Modern card-based design  
-✅ Interactive JavaScript calculations  
-✅ Works on desktop and mobile devices  
+## Student Grade Calculator
+
+- Enter student name
+- Enter multiple assignment grades
+- Calculate average score
+- Generate final letter grade
+- Determine pass/fail status
+- Responsive user interface
+
+## Unit Testing Features
+
+- Grade calculations separated into reusable functions
+- Automated testing using Jest
+- Tests for average calculation
+- Tests for letter grade generation
+- Tests for pass/fail validation
+- Automated test execution through npm
 
 ---
 
 # 🛠 Technologies Used
 
-## HTML5
+## Frontend
 
-Used to create the structure of the application, including:
+### HTML5
+Used to create the webpage structure:
 
-- Input forms
-- Buttons
-- Result sections
-- Page layout
-
-
-## CSS3
-
-Used to design and improve the user experience through:
-
-- Modern layouts
-- Gradients
-- Responsive design
-- Rounded components
-- Visual styling
+- Student input fields
+- Grade input sections
+- Result display area
 
 
-## JavaScript
+### CSS3
 
-Used to implement application functionality:
+Used to create:
 
-- Reading user input
-- Performing calculations
-- Validating grades
-- Assigning letter grades
-- Dynamically displaying results
+- Modern user interface
+- Responsive layout
+- Colors and styling
+- Card-based design
+
+
+### JavaScript
+
+Used for:
+
+- User interaction
+- Grade calculations
+- Dynamic result display
+
+---
+
+## Backend Testing Environment
+
+### Node.js
+
+Used as the runtime environment for executing JavaScript outside the browser.
+
+### Jest
+
+Used as the JavaScript testing framework to create and execute unit tests.
+
+Jest allows individual functions to be tested independently to ensure that the application logic works correctly.
 
 ---
 
@@ -86,10 +107,22 @@ student-grade-calculator
 │   └── Main webpage structure
 │
 ├── style.css
-│   └── Application styling and responsive design
+│   └── User interface styling
 │
 ├── script.js
-│   └── Grade calculation logic
+│   └── Browser interaction and calculator functionality
+│
+├── gradeCalculator.js
+│   └── Reusable grade calculation functions
+│
+├── gradeCalculator.test.js
+│   └── Jest unit tests
+│
+├── package.json
+│   └── Node.js project configuration and Jest scripts
+│
+├── package-lock.json
+│   └── Dependency lock file
 │
 └── README.md
     └── Project documentation
@@ -97,57 +130,132 @@ student-grade-calculator
 
 ---
 
-# ⚙️ How To Run Locally
+# ⚙️ Installation Instructions
 
 ## Requirements
 
-You need:
+Before running this project locally, install:
 
-- A web browser
+- Node.js
+- npm
 - Visual Studio Code (recommended)
-- Live Server extension (optional)
 
 
-## Steps
+## Clone Repository
 
-1. Clone the repository:
+Open a terminal and run:
 
 ```bash
 git clone https://github.com/randeep03/student-grade-calculator.git
 ```
 
-2. Open the project folder:
+Navigate into the project folder:
 
 ```bash
 cd student-grade-calculator
 ```
 
-3. Open the project in VS Code:
+---
+
+# 📦 Install Dependencies
+
+Install all required Node.js packages:
 
 ```bash
-code .
+npm install
 ```
 
-4. Open:
+This installs Jest and all required dependencies.
+
+---
+
+# 🧪 Running Unit Tests
+
+To execute the Jest test suite:
+
+```bash
+npm test
+```
+
+Expected output:
 
 ```
-index.html
+PASS ./gradeCalculator.test.js
+
+✓ calculates the average grade correctly
+✓ returns correct letter grade A
+✓ returns correct letter grade B
+✓ checks if student is passing
+✓ checks if student is failing
+
+Test Suites: 1 passed
+Tests: 5 passed
 ```
 
-5. Launch the application using:
+---
+
+# 🧩 Unit Testing Explanation
+
+The project separates grade calculation logic into individual functions:
+
+## calculateAverage()
+
+Calculates the average score from multiple grades.
+
+Example:
+
+```javascript
+calculateAverage([80,90,100])
+```
+
+Returns:
 
 ```
-Live Server
+90
 ```
 
-or open the HTML file directly in your browser.
+---
+
+## getLetterGrade()
+
+Converts the numerical average into a letter grade.
+
+Example:
+
+```javascript
+getLetterGrade(95)
+```
+
+Returns:
+
+```
+A
+```
+
+---
+
+## isPassing()
+
+Checks whether a student achieved a passing score.
+
+Example:
+
+```javascript
+isPassing(75)
+```
+
+Returns:
+
+```
+true
+```
 
 ---
 
 # 📊 Grading Scale
 
-| Average Score | Grade |
-|---------------|-------|
+| Average Score | Letter Grade |
+|---------------|--------------|
 | 90 - 100 | A |
 | 80 - 89 | B |
 | 70 - 79 | C |
@@ -156,44 +264,38 @@ or open the HTML file directly in your browser.
 
 ---
 
-# 🧮 How The Application Works
+# 🧪 Testing Strategy
 
-1. The user enters the student's name.
-2. The user provides three assignment scores.
-3. JavaScript calculates the average:
+The Jest test suite verifies that:
 
-```
-Average = (Assignment 1 + Assignment 2 + Assignment 3) / 3
-```
+| Function | Test Purpose |
+|-|-|
+| calculateAverage() | Confirms average calculations are correct |
+| getLetterGrade() | Confirms correct grade assignment |
+| isPassing() | Confirms pass/fail decisions |
 
-4. The application compares the average score against the grading scale.
-5. The final result displays:
-
-- Student name
-- Average score
-- Final letter grade
+Automated testing helps identify errors early and improves software reliability.
 
 ---
 
 # 🚀 Deployment
 
-The application is deployed using **Netlify**.
-
-Deployment workflow:
+The application deployment workflow:
 
 ```
+Developer Code
+       |
+       ↓
 GitHub Repository
-        |
-        |
-        ↓
-Netlify Deployment
-        |
-        |
-        ↓
+       |
+       ↓
+Netlify Hosting
+       |
+       ↓
 Live Website
 ```
 
-Any changes pushed to the GitHub main branch can be deployed and updated through the hosting platform.
+The frontend application is deployed through Netlify, while the testing environment runs locally using Node.js and Jest.
 
 ---
 
@@ -201,12 +303,13 @@ Any changes pushed to the GitHub main branch can be deployed and updated through
 
 Through this project, students learn:
 
-- How to structure webpages using HTML
-- How to style applications using CSS
-- How JavaScript creates interactive functionality
-- How to validate user input
-- How to use Git and GitHub for version control
-- How to deploy web applications using cloud hosting services
+- How to build interactive web applications
+- How JavaScript functions can be modularized
+- How Node.js supports JavaScript development
+- How Jest performs automated unit testing
+- How to write and execute test cases
+- How GitHub supports software development workflows
+- How cloud deployment works
 
 ---
 
@@ -218,4 +321,4 @@ COMP 2068 Group Tutorial Presentation Team
 
 # 📄 License
 
-This project is developed for educational purposes.
+This project is created for educational purposes.
